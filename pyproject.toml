@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lukesutils"
+version = "0.1.0"
+description = "Utility functions for maths, colours and general Python helpers"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+  {name = "Luke"}
+]
+
+[tool.setuptools]
+package-dir = {"" = "scripts"}
+
+[tool.setuptools.packages.find]
+where = ["scripts"]
