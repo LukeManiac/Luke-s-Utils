@@ -1,22 +1,28 @@
+# pyproject.toml
 [build-system]
 requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "lukesutils"
-version = "0.1.0"
-description = "Utility functions for maths, colours and general Python helpers"
+version = "1.0.0"
+description = "Utility functions for maths, colours, and general Python helpers"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
-  {name = "Luke"}
+    { name = "Luke" }
+]
+license = { text = "MIT" }
+keywords = ["utilities", "math", "colour", "helpers"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
 ]
 
 [tool.setuptools]
+# Tell setuptools that packages live in the 'scripts' folder
 package-dir = {"" = "scripts"}
 
 [tool.setuptools.packages.find]
 where = ["scripts"]
-
-git tag v1.0.0
-git push origin v1.0.0
