@@ -17,3 +17,6 @@ package-dir = {"" = "scripts"}
 
 [tool.setuptools.packages.find]
 where = ["scripts"]
+
+git tag v1.0.0
+git push origin v1.0.0
