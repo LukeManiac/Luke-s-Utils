@@ -21,7 +21,7 @@ def rainbow(timer: float = 0, hue_speed: float = 1, saturation: float = 1, value
         - rainbow(0)  # returns (1.0, 0.0, 0.0)
         - rainbow(0.5, hue_speed=2)  # returns mid-rainbow colour
     """
-    return coloursys.hsv_to_rgb((timer * hue_speed) % 1, saturation, value)
+    return (channel * 255 for channel in coloursys.hsv_to_rgb((timer * hue_speed) % 1, saturation, value))
 
 def lerp_colour(colour1: Colour, colour2: Colour, step: float, use_hsv: bool = False, find_closest_hue: bool = False, return_int: bool = False) -> Colour:
     """
