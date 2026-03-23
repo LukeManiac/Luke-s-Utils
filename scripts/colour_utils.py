@@ -66,7 +66,9 @@ def lerp_colour(colour1: Colour, colour2: Colour, step: float, use_hsv: bool = F
     else:
         output: Tuple[int, int, int] = tuple(int(lerp(start, end, step)) for start, end in zip(colour1, colour2))
 
+    output = tuple(x * 255 for x in output)
+
     if return_int:
-        output = tuple(int(x * 255) if isinstance(x, float) and x <= 1 else int(x) for x in output)
+        output = tuple(int(x) for x in output)
 
     return output
