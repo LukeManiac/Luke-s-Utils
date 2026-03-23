@@ -62,11 +62,9 @@ def lerp_colour(colour1: Colour, colour2: Colour, step: float, use_hsv: bool = F
         s = lerp(s1, s2, step)
         v = lerp(v1, v2, step)
 
-        output: Tuple[float, float, float] = coloursys.hsv_to_rgb(h, s, v)
+        output: Tuple[float, float, float] = tuple(x * 255 for x in coloursys.hsv_to_rgb(h, s, v))
     else:
-        output: Tuple[int, int, int] = tuple(int(lerp(start, end, step)) for start, end in zip(colour1, colour2))
-
-    output = tuple(x * 255 for x in output)
+        output: Tuple[int, int, int] = tuple(lerp(start, end, step) for start, end in zip(colour1, colour2))
 
     if return_int:
         output = tuple(int(x) for x in output)
